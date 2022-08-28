@@ -1,0 +1,27 @@
+@each $v in none, inline, block, inline-block, flex, inline-flex, grid,
+  inline-grid
+{
+  #root .d-#{$v} {
+    display: $v;
+  }
+}
+
+@each $v in relative, absolute, fixed, sticky {
+  #root .p-#{$v} {
+    position: $v;
+  }
+}
+
+#root .text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#root .text-center {
+  text-align: center;
+}
+
+#root .text-left {
+  text-align: left;
+}

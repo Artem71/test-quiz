@@ -1,0 +1,17 @@
+@import "./vars";
+@import "./utils/reset";
+@import "./utils/spasing";
+@import "./utils/colors";
+@import "./utils/font";
+@import "./utils/sizings";
+@import "./utils/flex";
+@import "./utils/utils";
+
+html {
+  font-size: $fs-base;
+}
+
+body {
+  color: $dark;
+  line-height: 1.5;
+}

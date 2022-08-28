@@ -1,0 +1,29 @@
+@import "../vars";
+
+$colors: (
+  'primary': $primary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark,
+  'white': $white,
+  'black': $black
+);
+
+@each $name, $color in $colors {
+  #root .color-#{$name} {
+    color: $color;
+  }
+
+  #root .bg-#{$name} {
+    background-color: $color;
+  }
+
+  #root .fill-#{$name} {
+    svg {
+      color: $color;
+    }
+  }
+}

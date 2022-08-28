@@ -1,0 +1,27 @@
+@mixin flex-center($d: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @if ($d == column) {
+    flex-direction: column;
+  }
+}
+
+@mixin placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}

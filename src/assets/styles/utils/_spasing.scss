@@ -1,0 +1,46 @@
+
+$spacer-base: 24px;
+$spacers: (
+  "0": 0,
+  "auto": auto,
+  xxs: 0.25 * $spacer-base,
+  xs: 0.5 * $spacer-base,
+  s: 0.75 * $spacer-base,
+  m: $spacer-base,
+  l: 1.5 * $spacer-base,
+  xl: 2 * $spacer-base,
+  xxl: 2.25 * $spacer-base
+);
+
+$types: (
+  "m": "margin",
+  "p": "padding"
+);
+
+$sides: (
+  "": "",
+  t: "-top",
+  r: "-right",
+  b: "-bottom",
+  l: "-left"
+);
+
+@each $key-spacer, $factor in $spacers {
+  @each $key-type, $type in $types {
+    @each $key-side, $side in $sides {
+      .#{$key-type}#{$key-side}-#{$key-spacer} {
+        #{$type}#{$side}: $factor;
+      }
+    }
+
+    .#{$key-type}x-#{$key-spacer} {
+      #{$type}-left: $factor;
+      #{$type}-right: $factor;
+    }
+
+    .#{$key-type}y-#{$key-spacer} {
+      #{$type}-bottom: $factor;
+      #{$type}-top: $factor;
+    }
+  }
+}
