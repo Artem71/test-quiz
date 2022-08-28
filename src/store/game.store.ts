@@ -95,9 +95,11 @@ class GameStore {
       const savedResults = JSON.parse(rawSavedResults)
       maxScore = Object.keys(savedResults).reduce((acc, name) => Math.max(acc, savedResults[name]), 0)
 
+      const prevUserBestRes = savedResults[this._user] || 0
+
       newResults = {
         ...savedResults,
-        [this._user]: this._score
+        [this._user]: Math.max(prevUserBestRes, this._score)
       }
     }
 

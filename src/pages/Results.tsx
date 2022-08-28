@@ -52,11 +52,12 @@ function Results() {
     <main className="h-full flex-center-column">
       {gameStore.isNewRecord &&
         <Typography.Title level={2} className="color-success">
-          Congratulations! This is a new record! ({gameStore.score})
+          Congratulations! This is a new record!
         </Typography.Title>
       }
 
-      <Typography.Title>Results</Typography.Title>
+      <Typography.Title>Points scored - {gameStore.score}</Typography.Title>
+      <Typography.Title level={2}>The best results</Typography.Title>
 
       <Table
         dataSource={tableData}
