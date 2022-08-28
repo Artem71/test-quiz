@@ -22,16 +22,7 @@ class QuizApiService extends BaseApiService implements IQuizApiService {
    */
   public async getQuizByCategory(catId: number): Promise<IQuiz> {
     const resp = await this.get('/category', { id: catId })
-    this.getClues(catId)
-    console.log('quiz', resp.data.clues.length);
-    
     return resp.data
-  }
-
-  public async getClues(catId: number) {
-    const resp = await this.get('/clues', { category: catId })
-    console.log('clues', resp.data.length);
-    
   }
 }
 
